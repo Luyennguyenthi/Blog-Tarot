@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+</head>
+<body>
+    <div class="background">
+    
+    <div>
+    
+    <img src="" alt="">
+    </div>
+    <div class="form-box">
+        <form method="POST">
+            {% csrf_token %}
+            {% for key, value in form.errors.items %}
+                {{value}}
+            {% endfor %}
+        
+                <div class="box1"></div>
+                <div class="box2">
+                    <div>
+                        <p><label class="label1">Tài khoản:</label>{{form.username}}</p>
+                        <p><label class="label2">Mật khẩu:</label>{{form.password}}</p>
+                        <input type="hidden" name="next" value="/"/>
+                        <input class="button-login" type="submit" value="Đăng nhập"/>
+                    </div>
+                </div>
+                
+        
+        </form>
+    </div>
+    <div></div>
+
+    </div>
+</body>
+<style>
+.form-box {
+    height:550px;
+    width:400px;
+    border-radius:70px;
+    background-color:#2b625b;
+}
+
+.background {
+    height:580px;
+    width:100%;
+    background-color:#bed0cf;
+    display: flex;
+    justify-content: space-between;
+    padding-top:30px;
+    
+}
+.box1 {
+    height:200px;
+    
+}
+.box2 {
+    height: 330px;
+    background-color:#ffffff;
+    border-bottom-left-radius:70px;
+    border-bottom-right-radius:70px;
+    text-align: center; 
+    padding-top:30px;
+
+}
+.box2 p {
+    
+}
+.button-login {
+    height:35px;
+    width:300px;
+    background-color:#2b625b;
+    color:#ffff;
+    border-radius:10px;
+}
+.label1 {
+    margin-right:50px;
+}
+.label2 {
+    margin-right:50px;
+}
+
+
+</style>
+</html>
